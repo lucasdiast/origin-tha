@@ -7,8 +7,13 @@ const originTheme = {
     fontBlueGrey400: '#708797',
     fontBlueGrey600: '#4D6475',
     fontBlueGrey900: '#1E2A32',
+    borderGrey: '#E9EEF2',
     lightBlue: '#0079FF',
     originBlue: '#1B31A8',
+  },
+  fonts: {
+    workSans: '',
+    rubik: '',
   },
 };
 

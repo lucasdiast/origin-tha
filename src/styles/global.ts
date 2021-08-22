@@ -11,12 +11,17 @@ body {
   display: block;
   height: 100%;
   background: #F4F8FA;
-  font-family: sans-serif;
+  font-family: 'Work Sans';
+  font-weight: 400;
 }
 
 root {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+strong {
+  font-weight: 600;
 }
 `;

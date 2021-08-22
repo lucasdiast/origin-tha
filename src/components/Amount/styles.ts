@@ -1,17 +1,25 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  display: inline-block;
+  margin: 0 16px 24px 0;
+`;
+
 export const SpanContainer = styled.span`
   display: block;
-  margin-bottom: 4px;
   font-size: 14px;
+  margin-bottom: 4px;
   color: ${(props) => props.theme.colors.fontBlueGrey900};
 `;
 
 export const InputContainer = styled.input`
-  padding: 18px 36px;
-  border: 1px solid #e9eef2;
-  border-radius: 4px;
+  max-width: 264px;
+  font-family: 'Rubik';
+  font-weight: 500;
   font-size: 24px;
+  padding: 12px 32px 12px 48px;
+  border: 1px solid ${(props) => props.theme.colors.borderGrey};
+  border-radius: 4px;
   color: ${(props) => props.theme.colors.fontBlueGrey600};
 
   :focus-visible {

@@ -1,27 +1,31 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import CardWrapper from '../components/CardWrapper';
-import InputLogo from '../components/InputLogo';
-import BigButton from '../components/BigButton';
 import Title from '../components/Title';
+import Amount from '../components/Amount';
+import ReachDate from '../components/ReachDate';
+import BigButton from '../components/BigButton';
+import MonthlyAmount from '../components/MonthlyAmount';
+import GoalLogo from '../components/GoalLogo';
 
-export function BuyCarPage(): JSX.Element {
-  return (
-    <>
-      <div>
-        <CardWrapper>
-          <>
-            <Title>
-              <>
-                Lets plan your <strong>saving goal.</strong>
-              </>
-            </Title>
-            <InputLogo />
-            <BigButton>Confirm</BigButton>
-          </>
-        </CardWrapper>
-      </div>
-    </>
-  );
-}
+import houseLogo from '../assets/icons/buy-a-house.svg';
+
+export const BuyCarPage = (): ReactElement => (
+  <>
+    <Title>
+      <>
+        Let&apos;s plan your <strong>saving goal.</strong>
+      </>
+    </Title>
+    <CardWrapper>
+      <>
+        <GoalLogo goal={'Buy a house'} logo={houseLogo} />
+        <Amount />
+        <ReachDate />
+        <MonthlyAmount />
+        <BigButton>Confirm</BigButton>
+      </>
+    </CardWrapper>
+  </>
+);
 
 export default BuyCarPage;

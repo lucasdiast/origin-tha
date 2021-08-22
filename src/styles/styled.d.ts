@@ -10,6 +10,7 @@ declare module 'styled-components' {
       fontBlueGrey400: string;
       fontBlueGrey600: string;
       fontBlueGrey900: string;
+      borderGrey: string;
       lightBlue: string;
       originBlue: string;
     };
