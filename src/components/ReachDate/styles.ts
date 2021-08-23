@@ -40,8 +40,7 @@ export const ArrowLeft = styled.img`
   padding: 0 30px 0 12px;
 `;
 
-export const ArrowRight = styled.img`
-  cursor: pointer;
+export const ArrowRight = styled(ArrowLeft)`
   padding: 0 12px 0 30px;
 `;
 

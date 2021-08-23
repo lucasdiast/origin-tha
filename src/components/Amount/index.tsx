@@ -1,16 +1,17 @@
-import React, { useState, ReactElement, ChangeEvent } from 'react';
+import React, { ReactElement } from 'react';
 import { SpanContainer, InputContainer, Container } from './styles';
 import { currencyFormatter } from '../../utils/formatter';
+import { useGoals } from '../../providers/goals';
 
 const Amount = (): ReactElement => {
-  const [value, setValue] = useState<string>('');
+  const { amount, setAmount } = useGoals();
 
-  const inputChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
 
     if (!Number(value)) return;
 
-    setValue(currencyFormatter(value));
+    setAmount(value);
   };
 
   return (
@@ -20,9 +21,9 @@ const Amount = (): ReactElement => {
         name="amount"
         type="text"
         placeholder="0"
-        value={value}
-        onChange={(e) => inputChange(e)}
-        // onBlur={() => currencyFormat()}
+        value={amount}
+        onChange={(e) => handleChange(e)}
+        onBlur={() => setAmount(currencyFormatter(amount))}
       />
     </Container>
   );

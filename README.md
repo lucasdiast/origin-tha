@@ -2,9 +2,12 @@
 
 Hi!
 
-This is my attempt to complete your test, it's been an atypical week for me and i tried my best.
+Being honest, i don't use typescript daily, but i liked learning during the development process and would love a feedback.
 
-Being honest, i don't use typescript daily, but i loved learning during the development process and would love a feedback.
+# Things i consider during the development
+
+Why format only on blur?
+In my opinion, the use of placeholder + onBlur is more UX friendly then make the user click at the correct place on "0.0"
 
 # Usage
 

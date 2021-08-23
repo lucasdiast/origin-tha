@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
 import { monthFormatter } from '../../utils/formatter';
 import {
   Container,
@@ -12,33 +12,10 @@ import {
 } from './styles';
 import arrowLeft from '../../assets/icons/arrow-left.svg';
 import arrowRight from '../../assets/icons/arrow-right.svg';
+import { useGoals } from '../../providers/goals';
 
 const ReachDate = (): ReactElement => {
-  const now = new Date();
-  const minMonth = now.getMonth() + 1;
-  const minYear = now.getFullYear();
-  const [month, setMonth] = useState<number>(minMonth);
-  const [year, setYear] = useState<number>(minYear);
-
-  const addMonth = () => {
-    if (month < 11) {
-      setMonth(month + 1);
-    } else {
-      setYear(year + 1);
-      setMonth(0);
-    }
-  };
-
-  const subtractMonth = () => {
-    if (year === minYear && month === minMonth) return;
-
-    if (month > 0) {
-      setMonth(month - 1);
-    } else {
-      setYear(year - 1);
-      setMonth(11);
-    }
-  };
+  const { targetMonth, targetYear, addMonth, subtractMonth } = useGoals();
 
   return (
     <Container>
@@ -46,16 +23,16 @@ const ReachDate = (): ReactElement => {
       <ContentContainer>
         <ArrowLeft
           src={arrowLeft}
-          onClick={() => subtractMonth()}
+          onClick={(e: React.MouseEvent<HTMLImageElement>) => subtractMonth(e)}
           alt="arrow left"
         />
         <DateWrapper>
-          <MonthContainer>{monthFormatter(month)}</MonthContainer>
-          <YearContainer>{year}</YearContainer>
+          <MonthContainer>{monthFormatter(targetMonth)}</MonthContainer>
+          <YearContainer>{targetYear}</YearContainer>
         </DateWrapper>
         <ArrowRight
           src={arrowRight}
-          onClick={() => addMonth()}
+          onClick={(e: React.MouseEvent<HTMLImageElement>) => addMonth(e)}
           alt="arrow right"
         />
       </ContentContainer>
