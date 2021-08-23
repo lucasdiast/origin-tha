@@ -1,9 +1,9 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, ReactChild } from 'react';
 
 import { Container } from './styles';
 
 interface AuxProps {
-  children: React.ReactChild;
+  children: ReactChild;
 }
 
 const CardWrapper = ({ children }: AuxProps): ReactElement => (

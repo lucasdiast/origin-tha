@@ -12,7 +12,7 @@ const MonthlyAmount = (): ReactElement => {
   return (
     <Container>
       <WhiteContainer>
-        <MessageContainer>Monthly Amnount</MessageContainer>
+        <MessageContainer>Monthly Amount</MessageContainer>
         <AmountContainer>$521</AmountContainer>
       </WhiteContainer>
       <BlueContainer>

@@ -17,4 +17,8 @@ export const GoalTitle = styled.span`
   margin-bottom: 8px;
   font-family: 'Rubik';
   font-weight: 500;
+
+  @media (max-width: 560px) {
+    font-size: 20px;
+  }
 `;

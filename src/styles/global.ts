@@ -13,6 +13,10 @@ body {
   background: #F4F8FA;
   font-family: 'Work Sans';
   font-weight: 400;
+
+  @media (max-width: 560px) {
+    font-size: 12px;
+  }
 }
 
 root {
