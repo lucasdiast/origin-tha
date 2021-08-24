@@ -16,6 +16,7 @@ const Amount = (): ReactElement => {
     <Container>
       <SpanContainer data-testid="message">Total amount</SpanContainer>
       <InputContainer
+        data-testid="amount"
         name="amount"
         type="text"
         placeholder="0"
