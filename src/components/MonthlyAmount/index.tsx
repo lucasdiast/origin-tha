@@ -22,7 +22,7 @@ const MonthlyAmount = (): ReactElement => {
       <BlueContainer>
         <TextContainer>
           You’re planning <strong>{range} monthly deposits</strong> to reach
-          your <strong>${amount}</strong> goal by{' '}
+          your <strong>${amount}</strong> goal by
           <strong>
             {monthFormatter(targetMonth)} {targetYear}.
           </strong>
