@@ -9,19 +9,18 @@ const Amount = (): ReactElement => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
 
-    if (!Number(value)) return;
-
     setAmount(value);
   };
 
   return (
     <Container>
-      <SpanContainer>Total amount</SpanContainer>
+      <SpanContainer data-testid="message">Total amount</SpanContainer>
       <InputContainer
         name="amount"
         type="text"
         placeholder="0"
         value={amount}
+        tabIndex={1}
         onChange={(e) => handleChange(e)}
         onBlur={() => setAmount(currencyFormatter(amount))}
       />

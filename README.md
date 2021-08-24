@@ -2,12 +2,7 @@
 
 Hi!
 
-Being honest, i don't use typescript daily, but i liked learning during the development process and would love a feedback.
-
-# Things i consider during the development
-
-Why format only on blur?
-In my opinion, the use of placeholder + onBlur is more UX friendly then make the user click at the correct place on "0.0"
+Being honest, i don't use typescript daily, but i really enjoyed learning during the development process and would love a feedback.
 
 # Usage
 

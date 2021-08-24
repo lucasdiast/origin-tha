@@ -30,6 +30,11 @@ export const ContentContainer = styled.div`
   border-radius: 4px;
   border: 1px solid ${(props) => props.theme.colors.borderGrey};
 
+  :focus-visible {
+    outline: none;
+    border: 1px solid ${(props) => props.theme.colors.fontBlueGrey900};
+  }
+
   @media (max-width: 560px) {
     padding: 7px;
   }

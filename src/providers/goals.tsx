@@ -7,7 +7,6 @@ import React, {
   ReactChild,
   ReactElement,
   SetStateAction,
-  MouseEventHandler,
 } from 'react';
 
 interface AuxProps {
@@ -26,8 +25,8 @@ interface PropsGoals {
   setTargetMonth: Dispatch<SetStateAction<number>>;
   setTargetYear: Dispatch<SetStateAction<number>>;
   setRange: Dispatch<SetStateAction<number>>;
-  addMonth: MouseEventHandler<HTMLImageElement>;
-  subtractMonth: MouseEventHandler<HTMLImageElement>;
+  subtractMonth: VoidFunction;
+  addMonth: VoidFunction;
 }
 
 const DEFAULT_PROPS = {
@@ -53,18 +52,11 @@ export const GoalsProvider = ({ children }: AuxProps): ReactElement => {
   const month = now.getMonth() + 1;
   const year = now.getFullYear();
 
-  const [amount, setAmount] = useState('');
+  const [amount, setAmount] = useState('0');
   const [targetMonth, setTargetMonth] = useState(month);
   const [targetYear, setTargetYear] = useState(year);
   const [range, setRange] = useState(1);
   const [monthlySave, setMonthlySave] = useState(0.0);
-
-  const calcMonthlyAmount = () => {
-    const cleanValue = amount.replace(',', '');
-    const targetValue = parseFloat(cleanValue) / range;
-
-    setMonthlySave(targetValue);
-  };
 
   const addMonth = () => {
     if (targetMonth < 11) {
@@ -89,8 +81,15 @@ export const GoalsProvider = ({ children }: AuxProps): ReactElement => {
   };
 
   useEffect(() => {
+    const calcMonthlyAmount = () => {
+      const cleanValue = parseFloat(amount.replace(',', ''));
+      const targetValue = parseFloat((cleanValue / range).toFixed(2));
+
+      setMonthlySave(targetValue);
+    };
+
     calcMonthlyAmount();
-  }, [amount, targetMonth]);
+  }, [amount, range, targetMonth]);
 
   return (
     <GoalContext.Provider

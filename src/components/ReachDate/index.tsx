@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, KeyboardEvent } from 'react';
 import { monthFormatter } from '../../utils/formatter';
 import {
   Container,
@@ -17,13 +17,22 @@ import { useGoals } from '../../providers/goals';
 const ReachDate = (): ReactElement => {
   const { targetMonth, targetYear, addMonth, subtractMonth } = useGoals();
 
+  const keyPress = (e: KeyboardEvent): void => {
+    if (e.code === 'ArrowRight') {
+      addMonth();
+    }
+    if (e.key === 'ArrowLeft') {
+      subtractMonth();
+    }
+  };
+
   return (
     <Container>
       <SpanContainer>Reach goal by</SpanContainer>
-      <ContentContainer>
+      <ContentContainer tabIndex={2} onKeyDown={(e) => keyPress(e)}>
         <ArrowLeft
           src={arrowLeft}
-          onClick={(e: React.MouseEvent<HTMLImageElement>) => subtractMonth(e)}
+          onClick={() => subtractMonth()}
           alt="arrow left"
         />
         <DateWrapper>
@@ -32,7 +41,7 @@ const ReachDate = (): ReactElement => {
         </DateWrapper>
         <ArrowRight
           src={arrowRight}
-          onClick={(e: React.MouseEvent<HTMLImageElement>) => addMonth(e)}
+          onClick={() => addMonth()}
           alt="arrow right"
         />
       </ContentContainer>
