@@ -23,6 +23,7 @@ const ReachDate = (): ReactElement => {
       <SpanContainer>Reach goal by</SpanContainer>
       <ContentContainer tabIndex={2} onKeyDown={(e) => keyPress(e)}>
         <ArrowLeft
+          className="arrow-left"
           alt="arrow left"
           src={arrowLeft}
           onClick={() => subtractMonth()}
@@ -32,6 +33,7 @@ const ReachDate = (): ReactElement => {
           <YearContainer>{targetYear}</YearContainer>
         </DateWrapper>
         <ArrowRight
+          className="arrow-right"
           alt="arrow right"
           src={arrowRight}
           onClick={() => addMonth()}

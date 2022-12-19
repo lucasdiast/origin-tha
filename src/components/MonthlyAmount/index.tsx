@@ -18,7 +18,7 @@ const MonthlyAmount = (): ReactElement => {
     <Container>
       <WhiteContainer>
         <MessageContainer>Monthly Amount</MessageContainer>
-        <AmountContainer>
+        <AmountContainer className="monthly-amount__value">
           {currencyFormatter(monthlySave.toString())}
         </AmountContainer>
       </WhiteContainer>

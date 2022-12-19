@@ -1,9 +1,5 @@
 # Origin Frontend Take-Home Assignment
 
-Hi!
-
-Being honest, i don't use typescript daily, but i really enjoyed learning during the development process and would love a feedback.
-
 # Usage
 
 This project requires the latest LTS version of NodeJS and you may need to install the yarn as global dependency
@@ -26,6 +22,22 @@ yarn start
 
 That's it. Just Access `http://localhost:3000` in your browser.
 
+### Testing
+
+```
+yarn cypress run
+```
+
+or if u want to use the cypress iterface to see the page running
+
+```
+yarn cypress open
+```
+
+```
+yarn test
+```
+
 ### Linting and Format
 
 ```
@@ -33,8 +45,4 @@ yarn lint
 yarn format
 ```
 
-### Testing
 
-```
-yarn test
-```

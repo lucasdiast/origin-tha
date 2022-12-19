@@ -11,6 +11,7 @@ const Amount = (): ReactElement => {
       <SpanContainer data-testid="message">Total amount</SpanContainer>
       <InputContainer
         data-testid="amount"
+        className="amount"
         name="amount"
         type="text"
         pattern="[0-9.,]+"

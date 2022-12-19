@@ -9,7 +9,7 @@ import GoalLogo from '../components/GoalLogo';
 
 import houseLogo from '../assets/icons/buy-a-house.svg';
 
-export const BuyCarPage = (): ReactElement => (
+export const BuyHousePage = (): ReactElement => (
   <>
     <Title>
       <>
@@ -28,4 +28,4 @@ export const BuyCarPage = (): ReactElement => (
   </>
 );
 
-export default BuyCarPage;
+export default BuyHousePage;
