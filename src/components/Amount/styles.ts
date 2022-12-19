@@ -43,4 +43,12 @@ export const InputContainer = styled.input`
     outline: none;
     border: 1px solid ${(props) => props.theme.colors.fontBlueGrey900};
   }
+
+  //remove the arrows from the input
+  ::-webkit-outer-spin-button,
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  -moz-appearance: textfield;
 `;

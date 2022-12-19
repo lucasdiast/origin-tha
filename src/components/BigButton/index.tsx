@@ -1,5 +1,4 @@
 import React, { ReactElement, ReactChild } from 'react';
-
 import { Container } from './styles';
 
 interface AuxProps {

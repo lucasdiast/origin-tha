@@ -1,16 +1,10 @@
 import React, { ReactElement } from 'react';
 import { SpanContainer, InputContainer, Container } from './styles';
 import { currencyFormatter } from '../../utils/formatter';
-import { useGoals } from '../../providers/goals';
+import useViewController from './viewController';
 
 const Amount = (): ReactElement => {
-  const { amount, setAmount } = useGoals();
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-
-    setAmount(value);
-  };
+  const { handleChange, setAmount, amount } = useViewController();
 
   return (
     <Container>
@@ -19,6 +13,7 @@ const Amount = (): ReactElement => {
         data-testid="amount"
         name="amount"
         type="text"
+        pattern="[0-9.,]+"
         placeholder="0"
         value={amount}
         tabIndex={1}
