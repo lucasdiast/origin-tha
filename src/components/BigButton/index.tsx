@@ -3,10 +3,13 @@ import { Container } from './styles';
 
 interface AuxProps {
   children: ReactChild;
+  onClickAction: () => void;
 }
 
-const BigButton = ({ children }: AuxProps): ReactElement => (
-  <Container>{children}</Container>
+const BigButton = ({ children, onClickAction }: AuxProps): ReactElement => (
+  <Container className="big-button" onClick={() => onClickAction()}>
+    {children}
+  </Container>
 );
 
 export default BigButton;

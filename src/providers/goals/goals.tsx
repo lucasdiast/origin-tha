@@ -1,9 +1,13 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {
   createContext,
   useContext,
   useState,
   ReactElement,
+  useEffect,
 } from 'react';
+
 import { PropsGoals, AuxProps } from './interfaces';
 
 const DEFAULT_PROPS = {
@@ -38,6 +42,24 @@ export const GoalsProvider = ({ children }: AuxProps): ReactElement => {
   const [targetMonth, setTargetMonth] = useState(month);
   const [targetYear, setTargetYear] = useState(year);
   const [monthlySave, setMonthlySave] = useState(0);
+
+  function getAllValues() {
+    const lsMonth = localStorage.getItem('targetMonth')!;
+    const lsYear = localStorage.getItem('targetYear')!;
+    const lsAmount = localStorage.getItem('amount')!;
+    const lsRange = localStorage.getItem('range')!;
+
+    setRange(parseFloat(lsRange));
+    setTargetYear(parseFloat(lsYear));
+    setTargetMonth(parseFloat(lsMonth));
+    setAmount(lsAmount);
+  }
+
+  useEffect(() => {
+    const initialValue = localStorage.getItem('targetMonth');
+
+    initialValue ? getAllValues() : setTargetMonth(month);
+  }, []);
 
   return (
     <GoalContext.Provider

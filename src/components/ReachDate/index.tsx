@@ -29,8 +29,10 @@ const ReachDate = (): ReactElement => {
           onClick={() => subtractMonth()}
         />
         <DateWrapper>
-          <MonthContainer>{monthFormatter(targetMonth)}</MonthContainer>
-          <YearContainer>{targetYear}</YearContainer>
+          <MonthContainer className="month">
+            {monthFormatter(targetMonth)}
+          </MonthContainer>
+          <YearContainer className="year">{targetYear}</YearContainer>
         </DateWrapper>
         <ArrowRight
           className="arrow-right"
