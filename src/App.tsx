@@ -1,10 +1,11 @@
 import { ThemeProvider } from 'styled-components';
 import originTheme from './styles/theme/origin';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Header from './components/Header';
 import Home from './pages/Home';
-import BuyHousePage from './pages/BuyHouse/BuyHousePage';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import BuyHouse from './pages/BuyHouse';
+import BuyCar, { GoToCollege } from './pages/GoToCollege';
 
 const router = createBrowserRouter([
   {
@@ -13,7 +14,15 @@ const router = createBrowserRouter([
   },
   {
     path: 'buy-a-house',
-    element: <BuyHousePage />,
+    element: <BuyHouse />,
+  },
+  {
+    path: 'buy-a-car',
+    element: <BuyCar />,
+  },
+  {
+    path: 'go-to-college',
+    element: <GoToCollege />,
   },
 ]);
 

@@ -3,7 +3,11 @@ import { SpanContainer, InputContainer, Container } from './styles';
 import { currencyFormatter } from '../../utils/formatter';
 import useViewController from './viewController';
 
-const Amount = (): ReactElement => {
+interface Props {
+  name: string;
+}
+
+const Amount = ({ name }: Props): ReactElement => {
   const { handleChange, setAmount, amount } = useViewController();
 
   return (

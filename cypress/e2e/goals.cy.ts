@@ -1,6 +1,6 @@
 describe('BuyHouse', () => {
   it('insert the amount and skip 2 months foward then go back one month', () => {
-    cy.visit('http://localhost:3000/');
+    cy.visit('http://localhost:3000/buy-a-house');
 
     cy.get('.amount').type('3500.45');
 
@@ -24,7 +24,7 @@ describe('BuyHouse', () => {
   });
 
   it('insert all the values and confirm to persist them', () => {
-    cy.visit('http://localhost:3000/');
+    cy.visit('http://localhost:3000/buy-a-house');
 
     cy.get('.amount').type('3500.45');
 
@@ -45,7 +45,7 @@ describe('BuyHouse', () => {
 
     cy.get('.big-button').click();
 
-    cy.visit('http://localhost:3000/');
+    cy.visit('http://localhost:3000/buy-a-house');
 
     cy.get('.month').should('have.text', 'February');
     cy.get('.year').should('have.text', '2024');

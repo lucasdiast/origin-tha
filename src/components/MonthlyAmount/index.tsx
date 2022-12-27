@@ -10,7 +10,11 @@ import {
 import { currencyFormatter, monthFormatter } from '../../utils/formatter';
 import useViewController from './viewController';
 
-const MonthlyAmount = (): ReactElement => {
+interface Props {
+  name: string;
+}
+
+const MonthlyAmount = ({ name }: Props): ReactElement => {
   const { amount, range, targetMonth, targetYear, monthlySave } =
     useViewController();
 

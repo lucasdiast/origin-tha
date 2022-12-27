@@ -23,9 +23,9 @@ export const BuyHousePage = (): ReactElement => {
       <CardWrapper>
         <>
           <GoalLogo goal={'Buy a house'} logo={houseLogo} />
-          <Amount />
-          <ReachDate />
-          <MonthlyAmount />
+          <Amount name="house" />
+          <ReachDate name="house" />
+          <MonthlyAmount name="house" />
           <BigButton onClickAction={saveMonthAndYear}>Confirm</BigButton>
         </>
       </CardWrapper>

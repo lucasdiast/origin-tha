@@ -14,7 +14,11 @@ import arrowLeft from '../../assets/icons/arrow-left.svg';
 import arrowRight from '../../assets/icons/arrow-right.svg';
 import useViewController from './viewController';
 
-const ReachDate = (): ReactElement => {
+interface Props {
+  name: string;
+}
+
+const ReachDate = ({ name }: Props): ReactElement => {
   const { keyPress, targetMonth, targetYear, addMonth, subtractMonth } =
     useViewController();
 
